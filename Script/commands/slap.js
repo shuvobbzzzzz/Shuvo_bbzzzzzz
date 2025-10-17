@@ -4,7 +4,7 @@ module.exports.config = {
   hasPermssion: 0,
   credits: "𝐂𝐘𝐁𝐄𝐑 ☢️_𖣘 -𝐁𝐎𝐓 ⚠️ 𝑻𝑬𝑨𝑴_ ☢️",
   description: "Slap the friend tag",
-  commandCategory: "general",
+  commandCategory: "🤣Funny🤣",
   usages: "slap [Tag someone you want to slap]",
   cooldowns: 5,
 };
