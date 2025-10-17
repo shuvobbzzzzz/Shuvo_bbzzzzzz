@@ -4,7 +4,7 @@ module.exports.config = {
     hasPermssion: 0,
     credits: "𝐂𝐘𝐁𝐄𝐑 ☢️_𖣘 -𝐁𝐎𝐓 ⚠️ 𝑻𝑬𝑨𝑴_ ☢️",
     description: "Kiss the person you want",
-    commandCategory: "Love",
+    commandCategory: "🩵love🩵",
     usages: "kiss [tag]",
     cooldowns: 5,
     dependencies: {
@@ -94,4 +94,5 @@ module.exports.run = async function ({ event, api, args, Currencies }) {
             attachment: fs.createReadStream(path)
         }, threadID, () => fs.unlinkSync(path), messageID));
     }
+
 }
