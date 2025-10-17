@@ -4,7 +4,7 @@ module.exports.config = {
  hasPermssion: 0,
  credits: "𝐒𝐡𝐚𝐡𝐚𝐝𝐚𝐭 𝐈𝐬𝐥𝐚𝐦",
  description: "Happy birthday wish for your friends",
- commandCategory: "M H BD",
+ commandCategory: "🩵love🩵",
  usages: "@tag",
  dependencies: {
  axios: "",
