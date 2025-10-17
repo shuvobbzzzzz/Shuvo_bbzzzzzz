@@ -31,7 +31,7 @@ module.exports.config = {
  credits: "Ullash api rasin",
  description: "সিঙ্গেলদের শেষ ভরসার ফাইল",
  usePrefix: false,
- commandCategory: "fun",
+ commandCategory: "🩵love🩵",
  usages: "/need gf",
  cooldowns: 20,
 };
