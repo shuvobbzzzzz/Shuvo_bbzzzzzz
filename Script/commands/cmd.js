@@ -1,143 +1,91 @@
+const f = require("fs-extra");
+const p = require("path");
+const a = require("axios");
+
 module.exports.config = {
- name: "cmd",
- version: "1.0.0",
- hasPermssion: 2,
- credits: "MAHBUB SHAON",
- description: "Manage/Control all bot modules",
- commandCategory: "System",
- usages: "[load/unload/loadAll/unloadAll/info] [name module]",
- cooldowns: 2,
- dependencies: {
- "fs-extra": "",
- "child_process": "",
- "path": ""
- }
+  name: "cmd",
+  version: "0.0.1",
+  hasPermssion: 2,
+  credits: "ArYAN",
+  description: "Manage commands install, load, unload",
+  commandCategory: "system",
+  usages: "cmd install , load ,unload, loadall",
+  cooldowns: 3
 };
 
-const loadCommand = function ({ moduleList, threadID, messageID, api }) {
- const { execSync } = global.nodemodule["child_process"];
- const { writeFileSync, unlinkSync, readFileSync } = global.nodemodule["fs-extra"];
- const { join } = global.nodemodule["path"];
- const { configPath, mainPath } = global.client;
- const logger = require(mainPath + "/utils/log");
+module.exports.run = async function ({ api, event, args }) {
+  const { threadID: t, messageID: m } = event;
+  const d = p.join(__dirname);
 
- var errorList = [];
- delete require.cache[require.resolve(configPath)];
- var configValue = require(configPath);
- writeFileSync(configPath + ".temp", JSON.stringify(configValue, null, 2), "utf8");
+  if (args[0] === "install") {
+    if (!args[1]) return api.sendMessage("⚠️ | Please enter the file name to save (with .js extension)", t, m);
+    if (!args[2]) return api.sendMessage("⚠️ | Please enter the url or code of the command file you want to install", t, m);
+    const n = args[1];
+    const fp = p.join(d, n);
+    try {
+      let c;
+      if (args[2].startsWith("http")) {
+        const r = await a.get(args[2]);
+        c = r.data;
+      } else {
+        c = args.slice(2).join(" ");
+      }
+      await f.writeFile(fp, c, "utf8");
+      delete require.cache[require.resolve(fp)];
+      global.client.commands.set(n.replace(".js", ""), require(fp));
+      return api.sendMessage(`✅ | Installed & loaded command "${n}" successfully\nSaved at: ${fp}`, t, m);
+    } catch (e) {
+      return api.sendMessage(`❌ | Failed to install command "${n}"\n${e.name}: ${e.message}`, t, m);
+    }
+  }
 
- for (const nameModule of moduleList) {
- try {
- const dirModule = __dirname + "/" + nameModule + ".js";
- delete require.cache[require.resolve(dirModule)];
- const command = require(dirModule);
- global.client.commands.delete(nameModule);
+  if (args[0] === "load") {
+    if (!args[1]) return api.sendMessage("⚠️ | Please enter the command name you want to load", t, m);
+    const n = args[1];
+    const fp = p.join(d, n);
+    if (!f.existsSync(fp)) return api.sendMessage(`⚠️ | Command file "${n}" not found`, t, m);
+    try {
+      delete require.cache[require.resolve(fp)];
+      global.client.commands.set(n.replace(".js", ""), require(fp));
+      return api.sendMessage(`✅ | Loaded command "${n}" successfully`, t, m);
+    } catch (e) {
+      return api.sendMessage(`❌ | Failed to load command "${n}"\n${e.name}: ${e.message}`, t, m);
+    }
+  }
 
- if (!command.config || !command.run || !command.config.commandCategory) 
- throw new Error("[CMD] - Module is not properly formatted!");
+  if (args[0] === "unload") {
+    if (!args[1]) return api.sendMessage("⚠️ | Please enter the command name you want to unload", t, m);
+    const n = args[1];
+    const fp = p.join(d, n);
+    if (!f.existsSync(fp)) return api.sendMessage(`⚠️ | Command file "${n}" not found`, t, m);
+    try {
+      delete require.cache[require.resolve(fp)];
+      global.client.commands.delete(n.replace(".js", ""));
+      return api.sendMessage(`✅ | Unloaded command "${n}" successfully`, t, m);
+    } catch (e) {
+      return api.sendMessage(`❌ | Failed to unload command "${n}"\n${e.name}: ${e.message}`, t, m);
+    }
+  }
 
- global.client.eventRegistered = global.client.eventRegistered.filter(info => info != command.config.name);
+  if (args[0] === "loadall") {
+    try {
+      const files = f.readdirSync(d).filter(x => x.endsWith(".js") && x !== "cmd.js");
+      let s = 0, fl = 0;
+      for (const x of files) {
+        const fp = p.join(d, x);
+        try {
+          delete require.cache[require.resolve(fp)];
+          global.client.commands.set(x.replace(".js", ""), require(fp));
+          s++;
+        } catch {
+          fl++;
+        }
+      }
+      return api.sendMessage(`✅ | Loaded ${s} commands successfully`, t, m);
+    } catch (e) {
+      return api.sendMessage(`❌ | Failed to load all commands\n${e.name}: ${e.message}`, t, m);
+    }
+  }
 
- global.client.commands.set(command.config.name, command);
- logger.loader("Loaded command " + command.config.name + "!");
-
- } catch (error) {
- errorList.push("- " + nameModule + " reason: " + error);
- }
- }
-
- if (errorList.length > 0) {
- api.sendMessage("[CMD] » Some modules failed to load: " + errorList.join(", "), threadID, messageID);
- } else {
- api.sendMessage("[CMD] » Successfully loaded all modules: " + moduleList.join(", "), threadID, messageID);
- }
-
- writeFileSync(configPath, JSON.stringify(configValue, null, 4), "utf8");
- unlinkSync(configPath + ".temp");
-};
-
-const unloadModule = function ({ moduleList, threadID, messageID, api }) {
- const { writeFileSync, unlinkSync } = global.nodemodule["fs-extra"];
- const { configPath, mainPath } = global.client;
- const logger = require(mainPath + "/utils/log").loader;
-
- delete require.cache[require.resolve(configPath)];
- var configValue = require(configPath);
- writeFileSync(configPath + ".temp", JSON.stringify(configValue, null, 4), "utf8");
-
- for (const nameModule of moduleList) {
- global.client.commands.delete(nameModule);
- global.client.eventRegistered = global.client.eventRegistered.filter(item => item !== nameModule);
- configValue["commandDisabled"].push(`${nameModule}.js`);
- global.config["commandDisabled"].push(`${nameModule}.js`);
- logger(`Unloaded command ${nameModule}!`);
- }
-
- writeFileSync(configPath, JSON.stringify(configValue, null, 4), "utf8");
- unlinkSync(configPath + ".temp");
-
- api.sendMessage(`[CMD] » Successfully unloaded ${moduleList.length} command(s)`, threadID, messageID);
-};
-
-module.exports.run = function ({ event, args, api }) {
- if (!api || !api.sendMessage) {
- console.error("[CMD] ERROR: API object is undefined!");
- return;
- }
-
- if (event.senderID != "100001039692046")
- if (event.senderID != "100089047474463")
- if (event.senderID != "61561511477968") {
- return api.sendMessage("[CMD] » You are not authorized to use this command!", event.threadID, event.messageID);
- }
-
- const { readdirSync } = global.nodemodule["fs-extra"];
- const { threadID, messageID } = event;
-
- var moduleList = args.slice(1);
-
- switch (args[0]) {
- case "count": {
- api.sendMessage(`[CMD] - Currently loaded commands: ${global.client.commands.size}`, threadID, messageID);
- break;
- }
- case "load": {
- if (moduleList.length == 0) return api.sendMessage("[CMD] » Module name cannot be blank!", threadID, messageID);
- return loadCommand({ moduleList, threadID, messageID, api });
- }
- case "unload": {
- if (moduleList.length == 0) return api.sendMessage("[CMD] » Module name cannot be blank!", threadID, messageID);
- return unloadModule({ moduleList, threadID, messageID, api });
- }
- case "loadAll": {
- moduleList = readdirSync(__dirname).filter(file => file.endsWith(".js") && !file.includes("example"));
- moduleList = moduleList.map(item => item.replace(/\.js/g, ""));
- return loadCommand({ moduleList, threadID, messageID, api });
- }
- case "unloadAll": {
- moduleList = readdirSync(__dirname).filter(file => file.endsWith(".js") && !file.includes("example") && !file.includes("command"));
- moduleList = moduleList.map(item => item.replace(/\.js/g, ""));
- return unloadModule({ moduleList, threadID, messageID, api });
- }
- case "info": {
- const command = global.client.commands.get(moduleList.join("") || "");
-
- if (!command) return api.sendMessage("[CMD] » The specified module does not exist!", threadID, messageID);
-
- const { name, version, hasPermssion, credits, cooldowns, dependencies } = command.config;
-
- return api.sendMessage(
- `====== ${name.toUpperCase()} ======\n` +
- `- Created by: ${credits}\n` +
- `- Version: ${version}\n` +
- `- Required Permission: ${hasPermssion == 0 ? "User" : hasPermssion == 1 ? "Admin" : "Support"}\n` +
- `- Cooldown: ${cooldowns} second(s)\n` +
- `- Dependencies: ${(Object.keys(dependencies || {})).join(", ") || "None"}`,
- threadID, messageID
- );
- }
- default: {
- return api.sendMessage("[CMD] » Invalid command!", threadID, messageID);
- }
- }
+  return api.sendMessage("⚠️ | Invalid usage. Use: cmd [install/load/unload/loadall]", t, m);
 };
