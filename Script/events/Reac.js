@@ -1,5 +1,5 @@
 module.exports.config = {
- name: "xxxx",
+ name: "error",
  eventType: ["log:subscribe"],
  version: "1.0.0",
  credits: "𝗜𝘀𝗹𝗮𝗺𝗶𝗰𝗸 𝗰𝗵𝗮𝘁 𝗯𝗼𝘁",
