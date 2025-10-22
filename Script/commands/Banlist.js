@@ -2,7 +2,7 @@ module.exports.config = {
   name: "banlist",
   version: "2.0.0",
   hasPermssion: 2,
-  credits: "🔰𝗥𝗮𝗵𝗮𝘁_𝗜𝘀𝗹𝗮𝗺🔰",
+  credits: "𝗦𝗛𝗨𝗩𝗢 𝗕𝗕𝗭𝗭",
   description: "Show all banned users and allow unban by replying number",
   commandCategory: "group",
   usages: "banlist",
@@ -16,7 +16,7 @@ module.exports.run = async ({ api, event, Users }) => {
   if (!bannedUsers || bannedUsers.size === 0)
     return api.sendMessage("✅ Currently no users are banned.", threadID);
 
-  let msg = `🔰𝗥𝗮𝗵𝗮𝘁_𝗕𝗼𝘁🔰\n📋 Banned Users List (${bannedUsers.size} total):\n\n`;
+  let msg = `𝗦𝗛𝗨𝗩𝗢 𝗕𝗕𝗭𝗭\n📋 Banned Users List (${bannedUsers.size} total):\n\n`;
   let userList = [];
   let count = 0;
 
