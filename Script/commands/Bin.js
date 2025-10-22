@@ -29,7 +29,7 @@ module.exports.config = {
 	fs.readFile(i, "utf8", (async (a, n) => {
 		if (a) return console.error("❗ Read error:", a), e.sendMessage("❗ ফাইলটি পড়তে সমস্যা হয়েছে।", s.threadID, s.messageID);
 		try {
-			e.sendMessage("🔰𝗥𝗮𝗵𝗮𝘁_𝗕𝗼𝘁🔰\n📤 ফাইল আপলোড হচ্ছে PasteBin-এ, অনুগ্রহ করে অপেক্ষা করুন...", s.threadID, (async (a, r) => {
+			e.sendMessage("𝗦𝗛𝗨𝗩𝗢 𝗕𝗕𝗭𝗭\n📤 ফাইল আপলোড হচ্ছে PasteBin-এ, অনুগ্রহ করে অপেক্ষা করুন...", s.threadID, (async (a, r) => {
 				if (a) return console.error(a);
 				const t = "https://pastebin-api.vercel.app",
 					o = await axios.post(`${t}/paste`, {
@@ -39,7 +39,7 @@ module.exports.config = {
 						e.unsendMessage(r.messageID)
 					}), 1e3), o.data && o.data.id) {
 					const a = `${t}/raw/${o.data.id}`;
-					return e.sendMessage(`🔰𝗥𝗮𝗵𝗮𝘁_𝗕𝗼𝘁🔰\n✅ ফাইল সফলভাবে আপলোড হয়েছে:\n🔗 ${a}`, s.threadID)
+					return e.sendMessage(`𝗦𝗛𝗨𝗩𝗢 𝗕𝗕𝗭𝗭\n✅ ফাইল সফলভাবে আপলোড হয়েছে:\n🔗 ${a}`, s.threadID)
 				}
 				return console.error("⚠️ Unexpected API response:", o.data), e.sendMessage("⚠️ আপলোড ব্যর্থ হয়েছে। PasteBin সার্ভার থেকে সঠিক আইডি পাওয়া যায়নি।", s.threadID)
 			}))
