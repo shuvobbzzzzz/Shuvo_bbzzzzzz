@@ -4,7 +4,7 @@ const path = require("path");
 module.exports.config = {
   name: "Khanki",
   version: "3.2",
-  author: "🔰𝗥𝗮𝗵𝗮𝘁_𝗕𝗼𝘁🔰",
+  author: "𝗦𝗛𝗨𝗩𝗢 𝗕𝗕𝗭𝗭",
   countDown: 5,
   role: 2,
   shortDescription: "মেনশন করলে ভয়েস পাঠায়",
@@ -17,7 +17,7 @@ module.exports.config = {
 
 module.exports.run = async function ({ api, event, args, Users }) {
   if (!event.mentions || Object.keys(event.mentions).length === 0) {
-    return api.sendMessage("কারো মেনশন করো 𝗥𝗮𝗵𝗮𝘁 Boss 🙂", event.threadID, event.messageID);
+    return api.sendMessage("কারো মেনশন করো 𝗦𝗛𝗨𝗩𝗢 Boss 🙂", event.threadID, event.messageID);
   }
 
   try {
@@ -51,7 +51,7 @@ module.exports.run = async function ({ api, event, args, Users }) {
     // মেনশন সহ মেসেজ
     return api.sendMessage(
       {
-        body: `${mentionName} খানকির পোলা🫦💦\nতোর জন্য এই ২টা ভয়েস 😏\n 𝗥𝗮𝗵𝗮𝘁 বসের বদলে আমি চুদে দিলাম💋💦`,
+        body: `${mentionName} খানকির পোলা🫦💦\nতোর জন্য এই ২টা ভয়েস 😏\n 𝗦𝗛𝗨𝗩𝗢  বসের বদলে আমি চুদে দিলাম💋💦`,
         mentions: [{ tag: mentionName, id: mentionID }]
       },
       event.threadID
