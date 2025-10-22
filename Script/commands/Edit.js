@@ -22,7 +22,7 @@ module.exports.run = async function ({ api, event, args, message }) {
   }
 
   const imgPath = path.join(__dirname, "cache", `${Date.now()}_edit.jpg`);
-  const waitMsg = await message.reply(`🔰𝗥𝗮𝗵𝗮𝘁_𝗕𝗼𝘁🔰 🧪 Editing image for: "${prompt}"...\nPlease wait...`);
+  const waitMsg = await message.reply(`𝗦𝗛𝗨𝗩𝗢 𝗕𝗕𝗭𝗭 🧪 Editing image for: "${prompt}"...\nPlease wait...`);
 
   try {
     const imgURL = repliedImage.url;
@@ -33,13 +33,13 @@ module.exports.run = async function ({ api, event, args, message }) {
     await fs.writeFile(imgPath, Buffer.from(res.data, "binary"));
 
     await message.reply({
-      body: `🔰𝗥𝗮𝗵𝗮𝘁_𝗕𝗼𝘁🔰 ✅ | Edited image for: "${prompt}"`,
+      body: `𝗦𝗛𝗨𝗩𝗢 𝗕𝗕𝗭𝗭 ✅ | Edited image for: "${prompt}"`,
       attachment: fs.createReadStream(imgPath)
     });
 
   } catch (err) {
     console.error("EDIT Error:", err);
-    message.reply("❌সরি বস হচ্ছে না ");
+    message.reply("❌সরি শুভ বস হচ্ছে না ");
   } finally {
     await fs.remove(imgPath);
     api.unsendMessage(waitMsg.messageID);
