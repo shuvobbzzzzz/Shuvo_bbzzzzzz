@@ -5,7 +5,7 @@ module.exports.config = {
   name: "mj",
   version: "1.0.0",
   hasPermssion: 0,
-  credits: "Rahat",
+  credits: "Shuvo",
   description: "Generate AI image (MidJourney style) using Stable Diffusion",
   commandCategory: "fun",
   usages: "/mj <prompt>",
