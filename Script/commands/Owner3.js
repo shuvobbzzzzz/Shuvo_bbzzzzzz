@@ -5,7 +5,7 @@ module.exports.config = {
     name: "owner3",
     version: "2.0.0",
     hasPermssion: 0,
-    credits: "Rahat Islam (visual refined by GPT-5)",
+    credits: "shuvo Islam (visual refined by GPT-5)",
     description: "Show stylish Owner Info card (no black border)",
     commandCategory: "info",
     usages: "",
@@ -59,16 +59,16 @@ module.exports.run = async function({ api, event }) {
     let y = cardY + 220;
 
     const info = [
-        "👑 Name : Rahat Islam",
-        "🧸 Nickname : Rahat",
+        "👑 Name : 𝗦𝗛𝗨𝗩𝗢 𝗕𝗕𝗭𝗭",
+        "🧸 Nickname : 𝗦𝗛𝗨𝗩𝗢",
         "🎂 Age : 16",
-        "💘 Relation : Single",
-        "🎓 Profession : Student",
-        "🏡 Address : Jamalpur",
+        "💘 Relation : 𝗦𝗜𝗡𝗚𝗟𝗘",
+        "🎓 Profession : 𝗦𝗧𝗨𝗗𝗘𝗡𝗧",
+        "🏡 Address : 𝗠𝗬𝗠𝗘𝗡𝗦𝗜𝗡𝗚𝗛",
         "",
         "🔗 CONTACT LINKS",
-        "📘 Facebook : fb.com/61581900625860",
-        "💬 Messenger : m.me/61581900625860"
+        "📘 Facebook : fb.com/100082387123597",
+        "💬 Messenger : m.me/100082387123597"
     ];
 
     for (const line of info) {
@@ -92,7 +92,7 @@ module.exports.run = async function({ api, event }) {
     fs.writeFileSync(filePath, buffer);
 
     api.sendMessage({
-        body: "💙 𝗥𝗮𝗵𝗮𝘁 𝗕𝗼𝘁 💙\n✨ Owner Information ✨",
+        body: "💙 𝗦𝗛𝗨𝗩𝗢 𝗕𝗕𝗬 💙\n✨ Owner Information ✨",
         attachment: fs.createReadStream(filePath)
     }, threadID, messageID);
 };
