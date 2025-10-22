@@ -5,7 +5,7 @@ module.exports.config = {
  credits: "SHAHADAT SAHU ",
  description: "Bot will reply when someone tags any of the admins",
  commandCategory: "Other",
- usages: "@",
+ usages: "@─ Ẋ͙s S̾h͢uͥvͭo͟ ⪼ 🩷🪽",
  cooldowns: 1
 };
 
