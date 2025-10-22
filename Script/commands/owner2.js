@@ -18,7 +18,7 @@ module.exports.config = {
 };
 
 module.exports.run = async function ({ api, event }) {
- const imageUrl = "https://graph.facebook.com/61581900625860/picture?height=720&width=720&access_token=6628568379|c1e620fa708a1d5696fb991c1bde5662";
+ const imageUrl = "";
  const path = __dirname + "/cache/owner.png";
 
  request(imageUrl)
@@ -28,7 +28,7 @@ module.exports.run = async function ({ api, event }) {
  body:
 `🌟 𝗢𝗪𝗡𝗘𝗥 𝗜𝗡𝗙𝗢 🌟
 
-👑 𝗡𝗮𝗺𝗲: Rahat Islam😘
+👑 𝗡𝗮𝗺𝗲: Shuvo boss😘
 😻 𝗔𝗱𝗱𝗿𝗲𝘀𝘀: মেয়েদের মনে🙈
 💼 𝗣𝗿𝗼𝗳𝗲𝘀𝘀𝗶𝗼𝗻: মেয়েদের মন জয় করা😍
 
@@ -39,7 +39,7 @@ module.exports.run = async function ({ api, event }) {
 📱 𝗪𝗵𝗮𝘁𝘀𝗔𝗽𝗽: দিলে আমার আম্মু বকা দিবা 🤣
 👻 𝗦𝗻𝗮𝗽𝗰𝗵𝗮𝘁: তোদের মতো কালা নাকি ফিল্টার লাগামু🤭
 
-🤖 𝗕𝗢𝗧 𝗕𝗬: 🔰 𝗥𝗮𝗵𝗮𝘁_𝗜𝘀𝗹𝗮𝗺 🔰
+🤖 𝗕𝗢𝗧 𝗕𝗬: 🔰 Ẋ͙s S̾h͢uͥvͭo͟ ⪼ 🩷🪽 🔰
 `,
  attachment: fs.createReadStream(path)
  }, event.threadID, () => fs.unlinkSync(path));
