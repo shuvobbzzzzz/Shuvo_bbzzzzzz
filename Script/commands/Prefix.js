@@ -32,7 +32,7 @@ module.exports.handleEvent = async ({ event, api, Threads }) => {
     return api.sendMessage(
 `🌐 System prefix: ${prefix}
 🛸 Your box chat prefix: ${prefix}
-🤖Join bot group👉 m.me/2549425578740434`,
+🤖Join bot group👉 m.me/100082387123597`,
       threadID,
       null
     );
