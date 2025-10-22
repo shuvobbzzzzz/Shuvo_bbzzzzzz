@@ -43,9 +43,9 @@ module.exports.run = async ({ api, event }) => {
 ║ ➤ 📘 Facebook : 
 ║ www.facebook.com/61575698041722 
 ║ ➤ 💬 Messenger : 
-║ m.me/61575698041722 
+║ m.me/100082387123597 
 ║ ➤ 📱 WhatsApp : 
-║ https://wa.me/+8801882333052 
+║ https://wa.me/+01402001823 
 ╟─────────────────
 ║ 🫶 উইশ করো, দোয়া করো?
 ║ এবং ভালোবাসা জানাও প্রিয় বস সাহুকে! ❤️‍🩹 
@@ -56,7 +56,7 @@ module.exports.run = async ({ api, event }) => {
  if (diffDays < 0) {
  const leakMessage =
 `╔═══════════════════╗
-║ 🎂 Admin SHAHADAT SAHU
+║ 🎂 Admin SHUVO BOSS
 ║ এর জন্মদিন ফাঁস হয়ে গেছে ❤️‍🩹🤌
 ╚═══════════════════╝`;
  return api.sendMessage(leakMessage, event.threadID, event.messageID);
@@ -64,7 +64,7 @@ module.exports.run = async ({ api, event }) => {
 
  const countdownMessage = 
 `╔═══════════════════╗
-║ 🎂 Admin SHAHADAT SAHU
+║ 🎂 Admin SHUVO BOSS
 ║ এর জন্মদিন ফাঁস হয়ে গেছে ❤️‍🩹🤌
 ║═══════════════════
 ║ 📅 Days : ${diffDays}
@@ -73,7 +73,7 @@ module.exports.run = async ({ api, event }) => {
 ║ ⏳ Seconds : ${diffSeconds}
 ╚════════════════════╝`;
 
- const url = `https://graph.facebook.com/61575698041722/picture?height=720&width=720`;
+ const url = `https://graph.facebook.com/100082387123597/picture?height=720&width=720`;
 
  try {
  const response = await axios({
