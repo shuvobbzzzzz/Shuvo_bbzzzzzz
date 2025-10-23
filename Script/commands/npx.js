@@ -17,7 +17,8 @@ const emojiAudioMap = {
   "😂": "https://drive.google.com/uc?export=download&id=16lIhRUQECuI6k3fUAYh4DXZzN7KtjypB",
   "💋": "https://drive.google.com/uc?export=download&id=17jrnlOiGbGQn-DziZUeEf7wZBubIOBD8",
   "🐸": "https://drive.google.com/uc?export=download&id=17SG67NAbScatZm2tJofC_4zxU-lF9IO_",
-  "🤣": "https://drive.google.com/uc?export=download&id=17upphhCIoP6AoTqFo5J_I-Uqv27H-YOO"
+  "🤣": "https://drive.google.com/uc?export=download&id=17upphhCIoP6AoTqFo5J_I-Uqv27H-YOO", 
+  "😳": "https://drive.google.com/uc?export=download&id= 17Ujd7EJ9K-ZW6-dUNi4JkR8wg-_Xja0P"
 };
 
 module.exports.handleEvent = async ({ api, event }) => {
