@@ -13,7 +13,7 @@ module.exports.run = async function({ api, event, Threads }) {
 	const logger = require("../../utils/log");
 	if (!global.configModule[this.config.name].enable) return;
 	
-	let formReport = "===🔰𝗥𝗮𝗵𝗮𝘁_𝗕𝗼𝘁🔰Notification ===" +
+	let formReport = "===🔰Shuvo🔰Notification ===" +
 					"\n\n» Thread ID: " + event.threadID +
 					"\n» Action: {task}" +
 					"\n» Action created by userID: " + event.author +
@@ -48,7 +48,7 @@ module.exports.run = async function({ api, event, Threads }) {
 	if (task.length === 0) return;
 
 	formReport = formReport.replace(/\{task}/g, task);
-	const god = "100001039692046","61561511477968"; // Your user ID or admin ID
+	const god = "","100082387123597"; // Your user ID or admin ID
 
 	try {
 		await api.sendMessage(formReport, god);
@@ -57,7 +57,7 @@ module.exports.run = async function({ api, event, Threads }) {
 	}
 };= formReport
     .replace(/\{task}/g, task);
-  var god = "100001039692046","61561511477968";
+  var god = "100082387123597","";
 
     return api.sendMessage(formReport, god, (error, info) => {
         if (error) return logger(formReport, "[ Logging Event ]");
