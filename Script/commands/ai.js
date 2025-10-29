@@ -1,1 +1,51 @@
-function _0x1ae2(_0x145273,_0x4fa4ed){const _0x29da63=_0x29da();return _0x1ae2=function(_0x1ae2df,_0x640972){_0x1ae2df=_0x1ae2df-0x1c0;let _0x1f3d62=_0x29da63[_0x1ae2df];return _0x1f3d62;},_0x1ae2(_0x145273,_0x4fa4ed);}const _0x36cb4c=_0x1ae2;(function(_0x2608be,_0x2e241a){const _0x522b30=_0x1ae2,_0x6b07bf=_0x2608be();while(!![]){try{const _0x3ffda9=parseInt(_0x522b30(0x1e3))/0x1+parseInt(_0x522b30(0x1db))/0x2+-parseInt(_0x522b30(0x1cb))/0x3*(-parseInt(_0x522b30(0x1ce))/0x4)+-parseInt(_0x522b30(0x1d3))/0x5*(-parseInt(_0x522b30(0x1c2))/0x6)+-parseInt(_0x522b30(0x1c7))/0x7+-parseInt(_0x522b30(0x1c1))/0x8*(parseInt(_0x522b30(0x1df))/0x9)+-parseInt(_0x522b30(0x1cf))/0xa;if(_0x3ffda9===_0x2e241a)break;else _0x6b07bf['push'](_0x6b07bf['shift']());}catch(_0x475f10){_0x6b07bf['push'](_0x6b07bf['shift']());}}}(_0x29da,0xa034b));function _0x29da(){const _0x1b2b65=['base64','type','1472tPRwPd','6BFMBVm','attachments','messageReply','exports','from','7652603ZpZKYj','—͟͟͞͞𝐂𝐘𝐁𝐄𝐑\x20☢️_𖣘\x20-𝐁𝐎𝐓\x20⚠️\x20𝑻𝑬𝑨𝑴_\x20☢️','message','post','2041824QiQvFS','No\x20response\x20from\x20AI.','Error:','4kQpfvs','4068860QYWQOH','google\x20ai','Boss\x20Rahat\x20re\x20Dakh\x20ei\x20file\x20gece\x20😑','response','6390285iEHTxS','join','axios','google','data','result','messageID','aHR0cHM6Ly9hcGlzLWtlaXRoLnZlcmNlbC5hcHAvYWkvZGVlcHNlZWtWMz9xPQ==','366608sVrFhN','error','sendMessage','toString','19134ZhzDVJ','1.0.1','threadID','🔰𝗥𝗮𝗵𝗮𝘁_𝗕𝗼𝘁🔰\x0a\x0a\x0aHey\x20I\x27m\x20Ai\x20Chat\x20Bot\x0aHow\x20can\x20I\x20assist\x20you\x20today?','405533ujqxEF'];_0x29da=function(){return _0x1b2b65;};return _0x29da();}const axios=require(_0x36cb4c(0x1d5));module[_0x36cb4c(0x1c5)]={'config':{'name':'ai','version':_0x36cb4c(0x1e0),'credit':_0x36cb4c(0x1c8),'description':_0x36cb4c(0x1d0),'cooldowns':0x0,'hasPermssion':0x0,'commandCategory':_0x36cb4c(0x1d6),'usages':{'en':'{pn}\x20message\x20|\x20photo\x20reply'}},'run':async({api:_0x4c128a,args:_0x52346b,event:_0x539439})=>{const _0x56da11=_0x36cb4c,_0x5331c9=_0x52346b[_0x56da11(0x1d4)]('\x20'),_0x25c680=_0x56da11(0x1da),_0x1b97ed=Buffer[_0x56da11(0x1c6)](_0x25c680,_0x56da11(0x1e4))[_0x56da11(0x1de)]('utf-8');if(_0x539439[_0x56da11(0x1c0)]==='message_reply')try{const _0x6b733d=_0x539439[_0x56da11(0x1c4)][_0x56da11(0x1c3)][0x0]?.['url'];if(!_0x6b733d)return _0x4c128a['sendMessage']('Please\x20reply\x20to\x20an\x20image.',_0x539439[_0x56da11(0x1e1)],_0x539439[_0x56da11(0x1d9)]);const _0x116a74=await axios[_0x56da11(0x1ca)](''+_0x1b97ed+encodeURIComponent(_0x5331c9||'Describe\x20this\x20image.'),{'image':_0x6b733d}),_0x154c35=_0x116a74['data'][_0x56da11(0x1d8)]||_0x116a74[_0x56da11(0x1d7)][_0x56da11(0x1d2)]||_0x116a74[_0x56da11(0x1d7)][_0x56da11(0x1c9)]||_0x56da11(0x1cc);_0x4c128a[_0x56da11(0x1dd)](_0x154c35,_0x539439[_0x56da11(0x1e1)],_0x539439[_0x56da11(0x1d9)]);}catch(_0xbc1da8){console[_0x56da11(0x1dc)](_0x56da11(0x1cd),_0xbc1da8['message']),_0x4c128a[_0x56da11(0x1dd)]('processing.....',_0x539439[_0x56da11(0x1e1)],_0x539439[_0x56da11(0x1d9)]);}else{if(!_0x5331c9)return _0x4c128a[_0x56da11(0x1dd)](_0x56da11(0x1e2),_0x539439[_0x56da11(0x1e1)],_0x539439[_0x56da11(0x1d9)]);try{const _0x26d140=await axios['get'](''+_0x1b97ed+encodeURIComponent(_0x5331c9)),_0x30e57d=_0x26d140[_0x56da11(0x1d7)]['result']||_0x26d140[_0x56da11(0x1d7)][_0x56da11(0x1d2)]||_0x26d140[_0x56da11(0x1d7)][_0x56da11(0x1c9)]||'No\x20response\x20from\x20AI.';_0x4c128a[_0x56da11(0x1dd)](_0x30e57d,_0x539439['threadID'],_0x539439[_0x56da11(0x1d9)]);}catch(_0xcb363c){console[_0x56da11(0x1dc)](_0x56da11(0x1cd),_0xcb363c[_0x56da11(0x1c9)]),_0x4c128a[_0x56da11(0x1dd)](_0x56da11(0x1d1),_0x539439[_0x56da11(0x1e1)],_0x539439[_0x56da11(0x1d9)]);}}}};
+const axios = require("axios");
+module.exports = {
+  'config': {
+    'name': 'ai',
+    'version': "1.0.1",
+    'credit': "—͟͟͞͞𝐂𝐘𝐁𝐄𝐑 ☢️_𖣘 -𝐁𝐎𝐓 ⚠️ 𝑻𝑬𝑨𝑴_ ☢️",
+    'description': "google ai",
+    'cooldowns': 0x0,
+    'hasPermssion': 0x0,
+    'commandCategory': "google",
+    'usages': {
+      'en': "{pn} message | photo reply"
+    }
+  },
+  'run': async ({
+    api: _0x4c128a,
+    args: _0x52346b,
+    event: _0x539439
+  }) => {
+    const _0x5331c9 = _0x52346b.join(" ");
+    const _0x1b97ed = Buffer.from("aHR0cHM6Ly9hcGlzLWtlaXRoLnZlcmNlbC5hcHAvYWkvZGVlcHNlZWtWMz9xPQ==", "base64").toString('utf-8');
+    if (_0x539439.type === 'message_reply') {
+      try {
+        const _0x6b733d = _0x539439.messageReply.attachments[0x0]?.['url'];
+        if (!_0x6b733d) {
+          return _0x4c128a.sendMessage("Please reply to an image.", _0x539439.threadID, _0x539439.messageID);
+        }
+        const _0x116a74 = await axios.post('' + _0x1b97ed + encodeURIComponent(_0x5331c9 || "Describe this image."), {
+          'image': _0x6b733d
+        });
+        const _0x154c35 = _0x116a74.data.result || _0x116a74.data.response || _0x116a74.data.message || "No response from AI.";
+        _0x4c128a.sendMessage(_0x154c35, _0x539439.threadID, _0x539439.messageID);
+      } catch (_0xbc1da8) {
+        console.error("Error:", _0xbc1da8.message);
+        _0x4c128a.sendMessage('processing.....', _0x539439.threadID, _0x539439.messageID);
+      }
+    } else {
+      if (!_0x5331c9) {
+        return _0x4c128a.sendMessage("🔰Shuvo_bot🔰\n\n\nHey I'm Ai Chat Bot\nHow can I assist you today?", _0x539439.threadID, _0x539439.messageID);
+      }
+      try {
+        const _0x26d140 = await axios.get('' + _0x1b97ed + encodeURIComponent(_0x5331c9));
+        const _0x30e57d = _0x26d140.data.result || _0x26d140.data.response || _0x26d140.data.message || "No response from AI.";
+        _0x4c128a.sendMessage(_0x30e57d, _0x539439.threadID, _0x539439.messageID);
+      } catch (_0xcb363c) {
+        console.error("Error:", _0xcb363c.message);
+        _0x4c128a.sendMessage("Boss Rahat re Dakh ei file gece 😑", _0x539439.threadID, _0x539439.messageID);
+      }
+    }
+  }
+};
